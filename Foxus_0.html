@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" >
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, width=device-width">
+	<title>Tian Yuan | Foxus</title>
+    <link rel="icon" type="image/gif" href="images/logo_1.png">
+	<link rel="stylesheet" type="text/css" href="css/font.css">
+	<link rel="stylesheet" type="text/css" href="css/ham_test.css">
+	<script type="text/javascript" src="jquery-3.3.1.js"></script>
+	<script type="text/javascript">
+        $(document).ready(function(){
+            $(".ham").click(function(){
+                $(this).toggleClass("is-toggled");
+                $(this).toggleClass("ham");
+                $(".menu").toggleClass("dropdown_show");
+                $(".menu").toggleClass("dropdown");
+                
+                if ($(this).hasClass('is-toggled')) {
+                    if ($('.menu').hasClass('dropdown_show')) {
+                        console.log("now is block!");
+                        $(".container-2").css("opacity", "0");
+                        $(".container-3").css("opacity", "1");
+                        $(document.body).css({"overflow-y": "hidden"});
+                    }
+                } else {
+                    $(".container-2").css("opacity", "1");
+                    $(".container-3").css("opacity", "1");
+                    $(document.body).css({"overflow-y": "auto"});
+                }
+                return false;
+            });
+
+            $(".video-btn").click(function(){
+                $(".poster").hide();
+                $(".video-title").hide();
+                $(".ham-tleft").addClass("fixed-ham");
+                $(".ham-bleft").addClass("fixed-ham");
+                $(".ham-tright").addClass("fixed-ham");
+                $(".ham-bright").addClass("fixed-ham");
+                $(".ham-whole").addClass("fixed-ham");
+                $(".icon_me").attr({"src": "images/logo_2.png"});
+
+                var offset_top = $(".project-content").offset().top;
+                $(window).on("scroll", function() {
+                    if($(window).scrollTop() >= offset_top) {
+                        $(".ham-tleft").removeClass("fixed-ham");
+                        $(".ham-bleft").removeClass("fixed-ham");
+                        $(".ham-tright").removeClass("fixed-ham");
+                        $(".ham-bright").removeClass("fixed-ham");
+                        $(".ham-whole").removeClass("fixed-ham");
+                        $(".icon_me").attr({"src": "images/logo_1.png"});
+                    } else {
+                        $(".ham-tleft").addClass("fixed-ham");
+                        $(".ham-bleft").addClass("fixed-ham");
+                        $(".ham-tright").addClass("fixed-ham");
+                        $(".ham-bright").addClass("fixed-ham");
+                        $(".ham-whole").addClass("fixed-ham");
+                        $(".icon_me").attr({"src": "images/logo_2.png"});
+                    }
+                });
+            });
+        });
+    </script>
+    <style type="text/css">
+        li a:hover {
+            -webkit-text-fill-color: white; 
+            text-fill-color: white;
+            -webkit-text-stroke: 2px white;
+            text-stroke: 2px white; 
+        }
+        .project-title-text {
+            letter-spacing: 0.05em;
+            -webkit-text-fill-color: #FFAFA2; 
+            text-fill-color: #FFAFA2; 
+            -webkit-text-stroke: 2px white; 
+            text-stroke: 2px white;
+        }
+        @media screen and (max-width: 500px) {
+            li a:hover {
+                -webkit-text-stroke: 0px white;
+                text-stroke: 0px white;
+            }
+            .project-title-text { 
+                -webkit-text-stroke: 1px white; 
+                text-stroke: 1px white;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <main class="main">
+    <div class="top">
+        <div class="container-1">
+                <a class="contract-icon" href="homepage.html">
+                    <img class="icon_me" src="images/logo_1.png">
+                </a>
+            </div>
+
+            <div class="container-3">
+                <div class="ham">
+                    <div class="ham-top ham-piece">
+                        <div class="ham-tleft ham-half"></div>
+                        <div class="ham-tright ham-half"></div>
+                    </div>
+                    <div class="ham-meat ham-piece">
+                        <div class="ham-whole"></div>
+                    </div>
+                    <div class="ham-bottom ham-piece">
+                        <div class="ham-bleft ham-half"></div>
+                        <div class="ham-bright ham-half"></div>
+                    </div>
+                </div>
+            </div>
+
+        <div class="menu dropdown" style="background-color: #FFAFA2;">
+            <ul class="menu-container">
+                <li>
+                    <a href="homepage.html" class="project-title-text">PORTFOLIO</a>
+                </li>
+                <li>
+                    <a href="resume.html" class="project-title-text">RESUME</a>
+                </li>
+            </ul>
+        </div>
+
+    	<div class="wrapper">
+	    	<div class="video-wrapper js-video-wrapper">
+		        <div class="video-responsive">
+			        <video class="video js-video" poster="images/Foxus/Foxus_video_cover.png">
+				        <source src="images/SayItWithFlowers/SayItWithFlowers_video.mp4" type="video/mp4">		
+				        Your browser does not support HTML5 video.
+			        </video>
+
+			        <canvas class="canvas js-canvas"></canvas>
+
+			        <img class="poster" src="images/Foxus/Foxus_video_cover.png">
+
+			        <div class="video-timeline js-timeline">
+			    	    <div class="video-timeline-passed js-timeline-passed">
+			    	    </div>
+			        </div>
+
+		    	    <span class="js-videottl">
+                        <span class="video-type type-text" style="color: black;">Website for Online Education</span>
+                        <span class="video-type subtitle-text" style="color: black;">FOXUS</span>
+                    </span>
+                    <button class="video-btn-b button-text js-videobtn"><a style="color: black;" href="web/viewer.html?file=Foxus_Presentation.pdf">VIEW PROGRESS DESK</a></button> 
+
+		        </div>
+	    	    <!--div class="video-bg"></div-->   	
+	        </div>
+    	    <!--div class="video-bg"></div-->
+        </div>
+    </div>
+    <div class="project-content is-loaded">
+    	<div class="grid">
+    		<div class="grid-3-space">
+    			<p class="cell_3 intro-title">PROJECT</p>
+    			<p class="cell_3 intro-text">
+    			It's a 2-week project. In this project, I redesigned the MOOC, shifted its focus from courses warehouse to study tutor.</p>
+    		</div>
+    		<div class="grid-3-space">
+    			<p class="cell_3 intro-title">TEAM</p>
+    			<p class="cell_3 intro-text" style="text-align: center">Holly, Yi HAO<br>Viola, Yixuan WANG<br>Qadeer Qiang GAO<br>Kelly, Yuan TIAN</p>
+    		</div>
+    		<div class="grid-3-space">
+    			<p class="cell_3 intro-title">ROLE</p>
+    			<p class="cell_3 intro-text">Interaction Designer</p>
+    		</div>
+    	</div>
+    	
+    	<div class="is-in-view after-callback">
+    		<p class="body-text project-text">
+    			FOXUS is designed as MOOC (Massive Open Online Course). In this project, we want to think about what the MOOC's position should be, reframe the users and their needs, and design FOXUS as their solution. Also, FOXUS will be a cross-platform product, which can be used on laptop, mobile phone, smart TV and smart watch.
+    		</p>
+    		<h2 class="quotation-text" style="text-align: center;">
+                "FOXUS ≠ Online University; FOXUS ≠ Online Training Classes"
+    		</h2>
+    		
+    		<h2 class="title-text" style="text-align: center;">
+    			· User Archetypes ·
+    		</h2>
+    		<p class="body-text project-text">
+    			I did some research and analyzed target users — who prepare to “study” via FOXUS, and classify the scenarios and motivations into three types.
+    		</p>		
+    		<div class="grid-f" style="margin-bottom: 0;">
+    			<div class="grid-3-space">
+    				<img class="cell_3" src="images/Foxus/User_1.png">
+                    <p class="footer-text" style="line-height: 1.3em; text-align: center; color: #F16A47;">Knowledge-Oriented</p>
+                    <p class="project-text">
+                        Which means that users aim to learn or dive deeper in a specific subject professionally. For example: Sam is a sophomore in mathematic, and wants to deepening the knowledge of linear algebra.
+                    </p>
+    			</div>
+    			<div class="grid-3-space">
+    				<img class="cell_3" src="images/Foxus/User_2.png">
+                    <p class="footer-text" style="line-height: 1.3em; text-align: center; color: #F16A47;">Job-Oriented</p>
+                    <p class="project-text">
+                        Which means that users aim to get pragmatic skills to cope with their works, or find career opportunities. For example: Sam is a programer now, and wants to learn machine learning so that get a better salary.
+                    </p>
+    			</div>
+    			<div class="grid-3-space">
+    				<img class="cell_3" src="images/Foxus/User_3.png">
+                    <p class="footer-text" style="line-height: 1.3em; text-align: center; color: #F16A47;">Enjoyment-Oriented</p>
+                    <p class="project-text">
+                        Which means that users intend to keep an open mind and enjoy know something new without specific purposiveness. For example, Sam traveled Italy recently, and was super fascinated with this country. He wants to know more culture and history about Italy.
+                    </p>
+    			</div>
+    		</div>
+
+            
+    		<p class="body-text project-text">
+    			<span style="font-family: GothamMedium">Why I do SCENARIOS like this?</span><br>
+    			People have various purposes and expectations which they come to MOOC and choose courses. I need to understand it and design the information architecture and “charming features” of the new MOOC. Especially after competitive research, I found:<br>Currently, most MOOC platforms only offer bunches of courses for users to search and get course list without customization, to choose one to enroll haphazardly, to learn by watching videos and filling out test paper mechanically. Also, the courses offered on MOOC are classified with subject, university and professor — as what happened in real colleges. It's suitable for "Knowledge-Oriented" users. But how about the other two kinds of users? Different targets makes users think different, seek different, learn in different way.
+    		</p>
+
+    		<h2 class="title-text" style="text-align: center;" id="element-waypoint1">
+    			· Insights for FOXUS ·
+    		</h2>
+    		<p class="body-text project-text">
+    			To meet these three types of users’ needs, I consider FOXUS  should have characters like:
+    		</p>
+    		<div class="grid-f" style="margin-bottom: 0;">
+    			<div class="grid-3-space">
+    				<img class="cell_3" src="images/Foxus/Cha_1.png">
+                    <p class="intro-text" style="line-height: 0em;">explore and get</p>
+                    <p class="footer-text" style="line-height: 1.3em; text-align: center; color: #F16A47;">matchable courses</p>
+                    <p class="project-text">
+                        According to different user scenarios, I need to categories courses properly, to present suitable courses’ introduction, to recommend customized courses. I hope to create explorative atmosphere in FOXUS, rather than the atmosphere like shopping in mall and selecting things from shelves.
+                    </p>
+    			</div>
+    			<div class="grid-3-space">
+    				<img class="cell_3" src="images/Foxus/Cha_2.png">
+                    <p class="intro-text" style="line-height: 0em;">learn at</p>
+                    <p class="footer-text" style="line-height: 1.3em; text-align: center; color: #F16A47;">anytime anywhere </p>
+                    <p class="project-text">
+                        It’s the trend that people in Morden cities have sliced their time into many fragmented time, and shift between various places frequently. So FOXUS should consider both how to improve users’ learning experience and how to smooth their learning feeling in different places.
+                    </p>
+    			</div>
+    			<div class="grid-3-space">
+    				<img class="cell_3" src="images/Foxus/Cha_3.png">
+                    <p class="intro-text" style="line-height: 0em;">progress with</p>
+                    <p class="footer-text" style="line-height: 1.3em; text-align: center; color: #F16A47;">like-minded</p>
+                    <p class="project-text">
+                        No one should be an island. For knowledge-oriented users, they need “classmates” to discuss with. For job-oriented users, they need “fellows” to communicate with. So FOXUS provide the platform to users to meet with like-minded people and progress together.
+                    </p>
+    			</div>
+    		</div>
+    		
+
+    		<h2 class="title-text" style="text-align: center;">
+    			· Information Architecture ·
+    		</h2>
+    		<p class="body-text project-text">
+    			Before thinking about the information architecture, we design user flow firstly. Sign up - Search courses - Choose courses - have classes - After classes. Based on user flow, we think about their action, purpose, mood to instruct our later design.
+    		</p>
+    		<div class="grid-f" style="margin-bottom: 6%;">
+    			<div class="grid_1">
+    				<img class="cell_1" src="images/Foxus/User_onboarding.png">
+    			</div>
+    		</div>
+    		<p class="body-text project-text">
+    			Then, we think about what should different terminals(Phone, Web, Smart Watch, Smart TV) do to realize our expectation to FOXUS, and define the information architecture.
+    		</p>
+    		<div class="grid-f">
+    			<div class="grid_1">
+    				<img class="cell_1" src="images/Foxus/Devices.png">
+    			</div>
+    		</div>
+    		<div class="grid-f">
+    			<div class="grid_1">
+    				<img class="cell_1" src="images/Foxus/Navigation_map.png">
+    			</div>
+    		</div>
+
+    		<h2 class="title-text" style="text-align: center;" id="element-waypoint3">
+    			· Details ·
+    		</h2>
+    		<p class="body-text project-text">
+    			While the functionality of foxus was mostly set in stone by the time high-fidelity wireframes were complete, a lot of time was put into adjusting the colours and visual details of page elements. Making sure the important elements were brought forward in hierarchy without distractions was a priority.
+    		</p>
+
+            <div class="grid-l">
+                <div class="grid-3_2">
+                    <video class="cell-s" autoplay="autoplay" loop="loop" muted="muted" style="border: 1px #EDEDED solid;">
+                        <source src="images/Foxus/explore.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="grid-3">
+                    <p class="cell-s all-tran"">
+                        <span class="resume-text-1 project-text-l">CAREER NET</span>
+                        <span class="project-text project-text-l">Explore related career and find out matchable courses.</span>
+                    </p>
+                </div>
+            </div>
+
+    		<div class="grid-r">
+                <div class="grid-3">
+                    <p class="cell_s all-tran">
+                        <span class="resume-text-1 project-text-l">MATCH TEST</span>
+                        <span class="project-text project-text-l">Test your background and habit, analyze your ability and expectation, help u find out your matchable courses.</span>
+                    </p>
+                </div>
+    			<div class="grid-3_2">
+    				<video class="cell-s" autoplay="autoplay" loop="loop" muted="muted" style="border: 1px #EDEDED solid;">
+    					<source src="images/Foxus/matchtest.mp4" type="video/mp4">
+    				</video>
+    			</div>    			
+    		</div>
+
+    		<div class="grid-l">
+                <div class="grid-3_2">
+                    <video class="cell-s" autoplay="autoplay" loop="loop" muted="muted" style="border: 1px #EDEDED solid;">
+                        <source src="images/Foxus/clipper.mp4" type="video/mp4">
+                    </video>
+                </div>
+    			<div class="grid-3">
+    				<p class="cell-s all-tran">
+                        <span class="resume-text-1 project-text-l">CLIPPER</span>
+                        <span class="project-text project-text-l">Clip and save your “video notes”, review them at anytime anywhere.</span>
+    				</p>
+    			</div>
+    		</div>
+    		
+    		<div class="grid-r">
+    			<div class="grid-3">
+    				<p class="cell_s all-tran">
+                        <span class="resume-text-1 project-text-l">MY CLASSROOM</span>
+                        <span class="project-text project-text-l">Classes&classmates&discussion&challenges, progress with mind-liked people.</span>
+    				</p>
+    			</div>
+    			<div class="grid-3_2">
+    				<video class="cell-s" autoplay="autoplay" loop="loop" muted="muted" style="border: 1px #EDEDED solid;">
+    					<source src="images/Foxus/mycourse.mp4" type="video/mp4">
+    				</video>
+    			</div>
+    		</div>
+
+    		<div class="grid-l">
+    			<div class="grid-3_2">
+    				<img class="cell_3" src="images/Foxus/crossplatform.png">
+    			</div>
+    			<div class="grid-3">
+    				<p class="cell-s all-tran">
+                        <span class="resume-text-1 project-text-l">SMOOTH SHIFT BETWEEN DEVICES</span>
+                        <span class="project-text project-text-l">Shift between devices smoothly. Your time is fragmented, your study is continuous. More details plz<br>
+                        	<button class="btn-pink button-text-index" style="color: black; margin-top: 20px; transform: translateX(0); left: 0;"><a style="color: black;" href="web/viewer.html?file=Foxus_Presentation.pdf">WORK DESK</a></button>
+                        </span>
+                    </p>
+    			</div>
+    		</div>
+
+            <h2 class="title-text" style="text-align: center;">
+                · Prototyping ·
+            </h2>
+            <div class="grid-f">
+                <div class="grid-1">
+                    <iframe class="iframe" src="https://free.modao.cc/app/U44fS54yLKzzkAXDIu383G55uB2bd7t/embed" style="left: 50%; transform: translateX(-50%); position: relative;" allowTransparency="true" frameborder="0"></iframe>
+                    <p class="intro-title" style="position: absolute; width: 100%; top: 50%; left: 0; z-index: -1;">PLZ PROTOTYPING ON BIGGER SCREEN</p>
+                </div>
+            </div>
+    		
+    	</div>
+    </div>
+    </main>
+
+    <div class="footer">
+        <div class="grid-f">
+            <div class="grid-2 work-list" style="background-color: #FFAFA2;">
+                <a href="homepage.html">
+                    <img class="cell_2 link-pic" src="images/Footer_1.png">
+                    <span class="link-name footer-text" style="opacity: 1;">BACK TO ALL WORKS</span>
+                </a>
+            </div>
+            <div class="grid-2 work-list" style="background-color: #0D2481; opacity: 1;">
+                <a href="Synyi_0.html">
+                    <img class="cell_2 link-pic" src="images/Synyi/Footer.png">
+                    <span class="link-hint footer-field-text">—— next ——</span>
+                    <span class="link-name footer-text">INTELL-DRIVEN MEDICAL RECORDS MGMT</span>
+                    <span class="link-field footer-field-text">web design</span>
+                </a>
+            </div>
+        </div>
+    </div>
+    <p class="body-text project-text">FIND  ME  BY  sxczqxty1994@163.com</p>
+
+	<script src="js/canvas-video-player.js"></script>
+	<script>
+		var canvasVideo = new CanvasVideoPlayer({
+			videoSelector: '.js-video',
+			videobtnSelector: '.js-videobtn',
+			videottlSelector: '.js-videottl',
+			canvasSelector: '.js-canvas',
+			timelineSelector: '.js-timeline',
+			audio: false
+		});
+	</script>
+</body>
+</html>

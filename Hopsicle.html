@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" >
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, width=device-width">
+	<title>Tian Yuan | Hopsicle</title>
+	<link rel="icon" type="image/gif" href="images/logo_1.png">
+	<link rel="stylesheet" type="text/css" href="css/font.css">
+	<link rel="stylesheet" type="text/css" href="css/ham_test.css">
+	<script type="text/javascript" src="jquery-3.3.1.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+            $(".dot-item").click(function(){
+                $(this).addClass("is-active");
+                $(this).siblings().removeClass('is-active');
+
+                if ($("#a").hasClass("is-active")) {
+                    $("#A").addClass("dot-list-active");
+                    $("#Aa").css("display", "flex");
+                } else {
+                    $("#A").removeClass("dot-list-active");
+                    $("#Aa").css("display", "none");
+                }
+                
+                if ($("#b").hasClass("is-active")) {
+                    $("#B").addClass("dot-list-active");
+                    $("#Bb").css("display", "flex");
+                } else {
+                    $("#b").removeClass("dot-list-active");
+                    $("#Bb").css("display", "none");
+                }
+
+                if ($("#c").hasClass("is-active")) {
+                    $("#C").addClass("dot-list-active");
+                    $("#Aa").css("display", "flex");
+                } else {
+                    $("#C").removeClass("dot-list-active");
+                    $("#Cc").css("display", "none");
+                }
+
+                if ($("#d").hasClass("is-active")) {
+                    $("#Dd").addClass("dot-list-active");
+                    $("#Dd").css("display", "flex");
+                } else {
+                    $("#D").removeClass("dot-list-active");
+                    $("#Dd").css("display", "none");
+                }
+
+                if ($("#e").hasClass("is-active")) {
+                    $("#E").addClass("dot-list-active");
+                    $("#Ee").css("display", "flex");
+                } else {
+                    $("#E").removeClass("dot-list-active");
+                    $("#Ee").css("display", "none");
+                }
+
+                if ($("#f").hasClass("is-active")) {
+                    $("#F").addClass("dot-list-active");
+                    $("#Ff").css("display", "flex");
+                } else {
+                    $("#F").removeClass("dot-list-active");
+                    $("#Ff").css("display", "none");
+                }
+
+                if ($("#g").hasClass("is-active")) {
+                    $("#G").addClass("dot-list-active");
+                    $("#Gg").css("display", "flex");
+                } else {
+                    $("#G").removeClass("dot-list-active");
+                    $("#Gg").css("display", "none");
+                }
+            })
+			$(".ham").click(function(){
+                $(this).toggleClass("is-toggled");
+                $(this).toggleClass("ham");
+                $(".menu").toggleClass("dropdown_show");
+                $(".menu").toggleClass("dropdown");
+                
+                if ($(this).hasClass('is-toggled')) {
+                    if ($('.menu').hasClass('dropdown_show')) {
+                        console.log("now is block!");
+                        $(".container-2").css("opacity", "0");
+                        $(".container-3").css("opacity", "1");
+                        $(document.body).css({"overflow-y": "hidden"});
+                    }
+                } else {
+                    $(".container-2").css("opacity", "1");
+                    $(".container-3").css("opacity", "1");
+                    $(document.body).css({"overflow-y": "auto"});
+                }
+                return false;
+            });
+
+			$(".video-btn").click(function(){
+                console.log('hahaha');
+				$(".poster").hide();
+				$(".video-title").hide();
+				$(".ham-tleft").addClass("fixed-ham");
+				$(".ham-bleft").addClass("fixed-ham");
+				$(".ham-tright").addClass("fixed-ham");
+				$(".ham-bright").addClass("fixed-ham");
+				$(".ham-whole").addClass("fixed-ham");
+				$(".icon_me").attr({"src": "images/logo_2.png"});
+
+				var offset_top = $(".project-content").offset().top;
+				$(window).on("scroll", function() {
+					if($(window).scrollTop() >= offset_top) {
+						$(".ham-tleft").removeClass("fixed-ham");
+						$(".ham-bleft").removeClass("fixed-ham");
+						$(".ham-tright").removeClass("fixed-ham");
+						$(".ham-bright").removeClass("fixed-ham");
+						$(".ham-whole").removeClass("fixed-ham");
+						$(".icon_me").attr({"src": "images/logo_1.png"});
+					} else {
+						$(".ham-tleft").addClass("fixed-ham");
+						$(".ham-bleft").addClass("fixed-ham");
+						$(".ham-tright").addClass("fixed-ham");
+						$(".ham-bright").addClass("fixed-ham");
+						$(".ham-whole").addClass("fixed-ham");
+						$(".icon_me").attr({"src": "images/logo_2.png"});
+					}
+				});
+			});
+		});
+	</script>
+    <style type="text/css">
+        li a:hover {
+            -webkit-text-fill-color: white; 
+            text-fill-color: white;
+            -webkit-text-stroke: 2px white;
+            text-stroke: 2px white; 
+        }
+        .project-title-text {
+            letter-spacing: 0.05em;
+            -webkit-text-fill-color: #48A150; 
+            text-fill-color: #48A150; 
+            -webkit-text-stroke: 2px white; 
+            text-stroke: 2px white;
+        }
+        @media screen and (max-width: 500px) {
+            li a:hover {
+                -webkit-text-stroke: 0px white;
+                text-stroke: 0px white;
+            }
+            .project-title-text { 
+                -webkit-text-stroke: 1px white; 
+                text-stroke: 1px white;
+            }
+        }
+    </style>
+</head>
+
+<body>
+	<main class="main">
+	<div class="top">
+		<div class="container-1">
+                <a class="contract-icon" href="homepage.html">
+                    <img class="icon_me" src="images/logo_1.png">
+                </a>
+            </div>
+
+            <div class="container-3">
+                <div class="ham">
+                    <div class="ham-top ham-piece">
+                        <div class="ham-tleft ham-half"></div>
+                        <div class="ham-tright ham-half"></div>
+                    </div>
+                    <div class="ham-meat ham-piece">
+                        <div class="ham-whole"></div>
+                    </div>
+                    <div class="ham-bottom ham-piece">
+                        <div class="ham-bleft ham-half"></div>
+                        <div class="ham-bright ham-half"></div>
+                    </div>
+                </div>
+            </div>
+
+	    <div class="menu dropdown" style="background-color: #48A150;">
+            <ul class="menu-container">
+                <li>
+                    <a href="homepage.html" class="project-title-text">PORTFOLIO</a>
+                </li>
+                <li>
+                    <a href="resume.html" class="project-title-text">RESUME</a>
+                </li>
+            </ul>
+        </div>
+
+    	<div class="wrapper">
+	    	<div class="video-wrapper js-video-wrapper">
+		        <div class="video-responsive">
+			        <!-- <video class="video js-video">
+				        <source src="images/Hopsicle/Hopsicle_video.mp4" type="video/mp4">		
+				        Your browser does not support HTML5 video.
+			        </video> -->
+
+			        <canvas class="canvas js-canvas"></canvas>
+
+			        <img class="poster" src="images/Hopsicle/Hopsicle_video_cover.png">
+
+			        <div class="video-timeline js-timeline">
+			    	    <div class="video-timeline-passed js-timeline-passed">
+			    	    </div>
+			        </div>
+
+		    	    <span class="js-videottl">
+		    	    	<span class="video-type type-text" style="color: black;">Service Design</span>
+		    	    	<span class="video-type subtitle-text" style="color: black;">HOPSICLE</span>
+		    	    </span>
+		            <button class="video-btn-b button-text js-videobtn" style="color: black;" onclick="openVideo()">PLAY CONCEPT VIDEO</button> 
+                    
+		        </div>
+	    	    <!--div class="video-bg"></div-->   	
+	        </div>
+    	    <!--div class="video-bg"></div-->
+        </div>
+    </div>
+    <div class="project-content is-loaded">
+    	<div class="grid">
+    		<div class="grid-3-space">
+    			<p class="cell_3 intro-title">PROJECT</p>
+    			<p class="cell_3 intro-text" id="abc">A service design work which enhance share-use concept in HK urban promenade, change people's mindset with bicycle.</p>
+    		</div>
+    		<div class="grid-3-space">
+    			<p class="cell_3 intro-title">TEAM</p>
+    			<p class="cell_3 intro-text">Claire GUAN<br>Holly, Yi HAO<br>Kelly, Yuan TIAN<br>Tania Jocelynn Trisnadi</p>
+    		</div>
+    		<div class="grid-3-space">
+    			<p class="cell_3 intro-title">ROLE</p>
+    			<p class="cell_3 intro-text">Designer</p>
+    		</div>
+    	</div>
+    	
+    	<div class="is-in-view after-callback">
+    		<p class="body-text project-text">
+                In this project, we were invited to design new service for BiciLine in the 6 months(2018.06 - 2018.12). We need to design new service which can reveal more values in cycling, promote "share-use" concept, and create a greeway with shared space in urban promenade.<br><br>Finally, we design a series of activities, a mobile APP, and a smart device installed on bike.
+            </p>
+
+            <h2 class="title-text" style="text-align: center;">
+                · Background ·
+            </h2>
+            <p class="body-text project-text">
+                <b>Hong Kong</b> has strict policies that discourage people to use bicycle as transportation and/or leisure tool. <br><b>BiciLine</b> has to create a concept to introduce bicycle to public as a tool of many values and  one that would fit and enhance the shared-use concept in public spaces. <br><b>Share-use concept</b> means, all people in the urban promenade, includes walkers, joggers, cyclists, tourists, etc. can share the public space together without colliding.
+            </p>
+
+            <h2 class="title-text" style="text-align: center;">
+                · Research Methods ·
+            </h2>
+            <div class="grid">
+                <div class="grid-4"></div>
+                <div class="grid-1">
+                    <img class="cell_1" src="images/Hopsicle/Research.png">
+                </div>
+                <div class="grid-4"></div>
+            </div>
+
+            <h2 class="title-text" style="text-align: center;">
+                · Insights ·
+            </h2>
+            <div class="grid" style="margin-bottom: 2%; margin-top: 2%;">
+                <div class="grid-3">
+                    <p class="cell_s">
+                        <span class="resume-text-1 project-text-l" style="color: #48A150;">Customize Experience</span>
+                    </p>
+                </div>
+                <div class="grid-3_2">
+                    <p class="cell_s">
+                        <span class="project-text project-text-l">Kids see more possibilities in how the space and facilities ca be used. They enjoy the park by customizing their own experiences.</span>
+                    </p>
+                </div>
+            </div>
+            <div class="grid" style="margin-bottom: 2%; margin-top: 2%;">
+                <div class="grid-3">
+                    <p class="cell_s">
+                        <span class="resume-text-1 project-text-l" style="color: #48A150;">Collaborate Activity</span>
+                    </p>
+                </div>
+                <div class="grid-3_2">
+                    <p class="cell_s">
+                        <span class="project-text project-text-l">When using a shared facility, people tend to have a "me against the world" mentality, lenient to oneself, strict toward others.</span>
+                    </p>
+                </div>
+            </div>
+            <div class="grid" style="margin-bottom: 2%; margin-top: 2%;">
+                <div class="grid-3">
+                    <p class="cell_s">
+                        <span class="resume-text-1 project-text-l" style="color: #48A150;">Escape the Mundane</span>
+                    </p>
+                </div>
+                <div class="grid-3_2">
+                    <p class="cell_s">
+                        <span class="project-text project-text-l">People go to the park to escape their daily routines. They tend to be more open to explore new activities and unique experiences, more communal than individual.</span>
+                    </p>
+                </div>
+            </div>
+            <div class="grid" style="margin-bottom: 2%; margin-top: 2%;">
+                <div class="grid-3">
+                    <p class="cell_s">
+                        <span class="resume-text-1 project-text-l" style="color: #48A150;">Evoke Nostalgia</span>
+                    </p>
+                </div>
+                <div class="grid-3_2">
+                    <p class="cell_s">
+                        <span class="project-text project-text-l">There's a nostalgic aspect to biking because biking is a childhood memory shared by many. Kwun Tong Promenade design and location has an underlying theme of old Hong Kong memories.</span>
+                    </p>
+                </div>
+            </div>
+
+            <h2 class="title-text" style="text-align: center;">
+                · Ideation ·
+            </h2>
+            <p class="body-text project-text">
+                Based on the research results, previous user journey map, we brainstorm and come up with bunches of ideas. After synthesizing, our final concept is a basket of activity service, mobile app and smart devices installed with bikes.
+            </p>
+
+            <h2 class="title-text" style="text-align: center;">
+                · To-Be User Journey ·
+            </h2>
+
+            <div class="grid" style="margin-bottom: 0; width: inherit;">
+                <ul class="grid-1" style="margin: auto;">
+                    <li id="a" class="dot-item is-active" style="z-index: 6"></li>
+                    <li id="b" class="dot-item" style="z-index: 5"></li>
+                    <li id="c" class="dot-item" style="z-index: 4"></li>
+                    <li id="d" class="dot-item" style="z-index: 3"></li>
+                    <li id="e" class="dot-item" style="z-index: 2"></li>
+                    <li id="f" class="dot-item" style="z-index: 1"></li>
+                    <li id="g" class="dot-item" style="z-index: 0"></li>
+                </ul>
+            </div>
+            <div class="grid" style="margin-top: 0;">
+                <ul class="grid-1" style="display: flex; margin-top:0;">
+                    <li id="A" class="dot-link intro-text dot-list-active" style="margin-top: 0;">Browse Online<br>Find Out Events</li>
+                    <li id="B" class="dot-link intro-text" style="margin-top: 0;">Booking Bikes<br>on Web/App</li>
+                    <li id="C" class="dot-link intro-text" style="margin-top: 0;">Transport to Bike Booth<br>Get/Rent Bikes</li>
+                    <li id="D" class="dot-link intro-text" style="margin-top: 0;">Browse Events on App</li>
+                    <li id="E" class="dot-link intro-text" style="margin-top: 0;">Game to Get Badges</li>
+                    <li id="F" class="dot-link intro-text" style="margin-top: 0;">Back to Booth Redeem Awards</li>
+                    <li id="G" class="dot-link intro-text" style="margin-top: 0;">Back home<br>Enjoy Photo Album</li>
+                </ul>
+            </div>
+
+            <div id="Aa" class="grid-f">
+                <div class="grid-1">
+                    <p class="cell_1 intro-title">Click Dot to View Related Design</p>
+                </div>
+            </div>
+
+            <div id="Bb" class="grid-f" style="display: none;">
+                <div class="grid-1">
+                    <img class="cell_1" style="max-width: 300px;" src="images/Hopsicle/keynote1.gif">
+                </div>
+            </div>
+
+            <div id="Cc" class="grid-f" style="display: none;">
+                <div class="grid-1">
+                    <p class="cell_1 intro-title">Click Dot to View Related Design</p>
+                </div>
+            </div>
+
+            <div id="Dd" class="grid-f" style="display: none;">
+                <div class="grid-3">
+                    <img class="cell_1" style="max-width: 240px;" src="images/Hopsicle/keynote2.gif">
+                </div>
+                <div class="grid-3_2" style="overflow-x: auto; border: 1px #e2e2e2 solid;">
+                    <img class="cell_overflow" style="overflow-x: auto; height: 100%; width: auto;" src="images/Hopsicle/activities.png">
+                </div>
+            </div>
+            
+            <div id="Ee" class="grid-f" style="display: none;">
+                <div class="grid-1">
+                    <img class="cell_1" style="max-width: 300px;" src="images/Hopsicle/keynote3.gif">
+                </div>
+            </div>
+
+            <div id="Ff" class="grid-f" style="display: none;">
+                <div class="grid-1">
+                    <img class="cell_1" style="max-width: 300px;" src="images/Hopsicle/keynote4.gif">
+                </div>
+            </div>
+
+            <div id="Gg" class="grid-f" style="display: none;">
+                <div class="grid-1">
+                    <img class="cell_1" style="max-width: 300px;" src="images/Hopsicle/keynote5.gif">
+                </div>
+            </div>
+
+
+            <h2 class="title-text" style="text-align: center;">
+                · Blue Print ·
+            </h2>
+            <div class="grid">
+                <div class="grid-1">
+                    <img class="cell_1" src="images/Hopsicle/Blueprint.png">
+                </div>
+            </div>
+
+            <h2 class="title-text" style="text-align: center;">
+                · Road Map ·
+            </h2>
+            <div class="grid">
+                <div class="grid-1">
+                    <img class="cell_1" src="images/Hopsicle/Roadmap.png">
+                </div>
+            </div>
+    	</div>
+    </div>
+    </main>
+
+    <footer class="footer">
+        <div class="grid-f">
+            <div class="grid-2 work-list" style="background-color: #0D2481;">
+                <a href="Synyi_0.html">
+                    <img class="cell_2 link-pic" src="images/Synyi/Footer.png">
+                    <span class="link-hint footer-field-text">—— previous ——</span>
+                    <span class="link-name footer-text">INTELL-DRIVEN MEDICAL RECORDS MGMT</span>
+                    <span class="link-field footer-field-text">web design</span>
+                </a>
+            </div>
+            <div class="grid-2 work-list" style="background-color: #B4D0E7;">
+                <a href="HappyNewYear_0.html">
+                    <img class="cell_2 link-pic" src="images/game/Footer.png" src="">
+                    <span class="link-hint footer-field-text">—— next ——</span>
+                    <span class="link-name footer-text">HAPPY NEW YEAR</span>
+                    <span class="link-field footer-field-text">unity 3d game design</span>
+                </a>
+            </div>
+        </div>
+    </footer>
+    <p class="body-text project-text">FIND  ME  BY  sxczqxty1994@163.com</p>
+
+	<script type="text/javascript">
+		function openVideo() {
+			window.open("http://v.youku.com/v_show/id_XMzYyOTIzOTM4OA==.html?spm=a2hzp.8244740.0.0");
+		}
+	</script>
+	<script src="js/canvas-video-player.js"></script>
+	<script>
+		var canvasVideo = new CanvasVideoPlayer({
+			videoSelector: '.js-video',
+			videobtnSelector: '.js-videobtn',
+			videottlSelector: '.js-videottl',
+			canvasSelector: '.js-canvas',
+			timelineSelector: '.js-timeline',
+			audio: false
+		});
+	</script>
+</body>
+</html>

@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" >
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, width=device-width">
+	<title>Tian Yuan | Intell-Driven Medical Records MGMT</title>
+	<link rel="icon" type="image/gif" href="images/logo_1.png">
+	<link rel="stylesheet" type="text/css" href="css/font.css">
+	<link rel="stylesheet" type="text/css" href="css/ham_test.css">
+	<script type="text/javascript" src="jquery-3.3.1.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$(".ham").click(function(){
+				$(this).toggleClass("is-toggled");
+				$(this).toggleClass("ham");
+				$(".menu").toggleClass("dropdown_show");
+				$(".menu").toggleClass("dropdown");
+				
+				if ($(this).hasClass('is-toggled')) {
+					if ($('.menu').hasClass('dropdown_show')) {
+						console.log("now is block!");
+						$(".container-2").css("opacity", "0");
+						$(".container-3").css("opacity", "1");
+						$(document.body).css({"overflow-y": "hidden"});
+					}
+				} else {
+					$(".container-2").css("opacity", "1");
+					$(".container-3").css("opacity", "1");
+					$(document.body).css({"overflow-y": "auto"});
+				}
+				return false;
+			});
+
+			$(".video-btn").click(function(){
+				$(".poster").hide();
+				$(".video-title").hide();
+				$(".ham-tleft").addClass("fixed-ham");
+				$(".ham-bleft").addClass("fixed-ham");
+				$(".ham-tright").addClass("fixed-ham");
+				$(".ham-bright").addClass("fixed-ham");
+				$(".ham-whole").addClass("fixed-ham");
+				$(".icon_me").attr({"src": "images/logo_2.png"});
+
+				var offset_top = $(".project-content").offset().top;
+				$(window).on("scroll", function() {
+					if($(window).scrollTop() >= offset_top) {
+						$(".ham-tleft").removeClass("fixed-ham");
+						$(".ham-bleft").removeClass("fixed-ham");
+						$(".ham-tright").removeClass("fixed-ham");
+						$(".ham-bright").removeClass("fixed-ham");
+						$(".ham-whole").removeClass("fixed-ham");
+						$(".icon_me").attr({"src": "images/logo_1.png"});
+					} else {
+						$(".ham-tleft").addClass("fixed-ham");
+						$(".ham-bleft").addClass("fixed-ham");
+						$(".ham-tright").addClass("fixed-ham");
+						$(".ham-bright").addClass("fixed-ham");
+						$(".ham-whole").addClass("fixed-ham");
+						$(".icon_me").attr({"src": "images/logo_2.png"});
+					}
+				});
+			});
+		});
+	</script>
+    <style type="text/css">
+        li a:hover {
+            -webkit-text-fill-color: white; 
+            text-fill-color: white;
+            -webkit-text-stroke: 2px white;
+            text-stroke: 2px white; 
+        }
+        .project-title-text {
+            letter-spacing: 0.05em;
+            -webkit-text-fill-color: #0D2481; 
+            text-fill-color: #0D2481; 
+            -webkit-text-stroke: 2px white; 
+            text-stroke: 2px white;
+        }
+        @media screen and (max-width: 500px) {
+            li a:hover {
+                -webkit-text-stroke: 0px white;
+                text-stroke: 0px white;
+            }
+            .project-title-text { 
+                -webkit-text-stroke: 1px white; 
+                text-stroke: 1px white;
+            }
+        }
+        .imp-text {
+            /*font-family: GothamMedium;*/
+            color: #0D2481;
+        }
+    </style>
+</head>
+
+<body>
+	<main class="main">
+	<div class="top">
+		<div class="container-1">
+                <a class="contract-icon" href="homepage.html">
+                    <img class="icon_me" src="images/logo_1.png">
+                </a>
+            </div>
+
+            <div class="container-3">
+                <div class="ham">
+                    <div class="ham-top ham-piece">
+                        <div class="ham-tleft ham-half"></div>
+                        <div class="ham-tright ham-half"></div>
+                    </div>
+                    <div class="ham-meat ham-piece">
+                        <div class="ham-whole"></div>
+                    </div>
+                    <div class="ham-bottom ham-piece">
+                        <div class="ham-bleft ham-half"></div>
+                        <div class="ham-bright ham-half"></div>
+                    </div>
+                </div>
+            </div>
+
+	    <div class="menu dropdown" style="background-color: #0D2481;">
+            <ul class="menu-container">
+                <li>
+                    <a href="homepage.html" class="project-title-text" style="color: white;">PORTFOLIO</a>
+                </li>
+                <li>
+                    <a href="resume.html" class="project-title-text";" style="color: white;">RESUME</a>
+                </li>
+            </ul>
+        </div>
+
+    	<div class="wrapper">
+	    	<div class="video-wrapper js-video-wrapper">
+		        <div class="video-responsive">
+			        <video class="video js-video">
+				        <source src="" type="video/mp4">		
+				        Your browser does not support HTML5 video.
+			        </video>
+
+			        <canvas class="canvas js-canvas"></canvas>
+
+			        <img class="poster" src="images/Synyi/Synyi_video_cover.png">
+
+			        <div class="video-timeline js-timeline">
+			    	    <div class="video-timeline-passed js-timeline-passed">
+			    	    </div>
+			        </div>
+
+                    <span class="js-videottl">
+                        <span class="video-type type-text" style="color: black;">Website Work in Synyi</span>
+                        <span class="video-type subtitle-text" style="width: 100%; text-align: center; color: black; top: 46%;">INTELL-DRIVEN MEDICAL RECORDS MGMT</span>
+                        <span class="video-type subtitle-text-small" style="width: 100%; text-align: center; color: black;">Launched on October 2017</span>
+                    </span>
+		            <button class="video-btn button-text js-videobtn" disabled="disabled" style="opacity: 0;">PLAY IT</button> 
+		        </div>
+	    	    <!--div class="video-bg"></div-->   	
+	        </div>
+    	    <!--div class="video-bg"></div-->
+        </div>
+    </div>
+    <div class="project-content is-loaded">
+    	<div class="grid">
+    		<div class="grid-3-space">
+    			<p class="cell_3 intro-title">PROJECT</p>
+    			<p class="cell_3 intro-text">This website is the first products of Synyi which is deployed and runs in sevarral hospitals, and focuses in searching and managing medical records, creating clinical research program.</p>
+    		</div>
+    		<div class="grid-3-space">
+    			<p class="cell_3 intro-title">TEAM</p>
+    			<p class="cell_3 intro-text">Yingyao ZHANG<br>Kelly, Yuan TIAN</p>
+    		</div>
+    		<div class="grid-3-space">
+    			<p class="cell_3 intro-title">ROLE</p>
+    			<p class="cell_3 intro-text"> Lead Interaction Designer<br>Graphic Designer</p>
+    		</div>
+    	</div>
+    	
+    	<div class="is-in-view after-callback">
+            <p class="body-text project-text">
+                This work is done for doctors to search and adopt satisfactory medical records and do clinical research on it. The product is deployed in ShangHai First Maternity and Infant Hospital firstly on Sept. 2017. I design the web from scratch and want to share some glittering with you.
+            </p>
+            <h2 class="title-text" style="text-align: center;">
+                · Background  ·
+            </h2>
+            <div class="grid">
+                <div class="grid-2">
+                    <p class=" project-text cell_1 all-tran" style="font-family: GothamLight; text-align: left; ">
+                        In traditional hospital, doctors write paper-based medical records by hand, rewrite it into computer as electronic medical records(EMR). When doctors do medical research, it's tough to filter proper samples from all patients' records as they have to check all synonymous keywords manually. Every patient could have several records in defferent time. Different doctor could use various term to depict same symptom. So, doctors need to spend bunch of time to select, record and follow up specific patients.
+                        <br><br>
+                        Synyi is an artificial intelligence company wishing to accelerate processing of medical texts, so that the loop of "remedy from study - data from remedy - study from data" can be strengthen, the <mark>efficiency of medical work</mark> can be improved.
+                    </p>
+                </div>
+                <div class="grid-2">
+                    <img class="cell_1" src="images/Synyi/Background.png">
+                </div>
+            </div>
+
+    		<h2 class="title-text" style="text-align: center;">
+    			· Challenges ·
+    		</h2>
+    		<p class="body-text project-text">
+    			Our goal for this project is to:
+    			<br>
+    			1. Make doctors <mark>understand the design easy/fast</mark>.<br>
+    			2. Give doctors <mark>more controls/enough functions</mark>> with a <mark>clear and satisfying interfaces</mark>.<br>
+    			3. Optimize <mark>the strength of artificial intelligence</mark> -- NLP(Natural language processing).
+    		</p>
+
+    		<h2 class="title-text" style="text-align: center;" id="element-waypoint0">
+    			· Insights in Searching and Adopting Medical Records ·
+    		</h2>
+    		<p class="body-text project-text">
+    			We do case study and competetion analysis in beginning, and invite our medical consultants to have focus group. Our goal is to understand their tasks and habits when manage medical records. Based on the pain points we find, we come up with the reasons of pain points.
+    		</p>
+    		<div class="grid-f">
+    			<div class="grid-1">
+    				<img class="cell_1" src="images/Synyi/PainPoint.png">
+    			</div>
+    		</div>
+    		<div class="grid-f">
+                <div class="grid-3-space">
+                    <img class="cell_3" src="images/Synyi/Insight_3.png">
+                    <p class="footer-text cell_1" style="line-height: 1em; text-align: center; color: #0D2481;">Complex Search Logic and Conditions</p>
+                    <p class="project-text cell_1">
+                        For a strict medical research project, doctors need to consider the patients' gender, age, illness, past medical history, medications records, surgery records, illness/medication/surgery sequences......
+                    </p>
+                </div>
+                <div class="grid-3-space">
+                    <img class="cell_3" src="images/Synyi/Insight_2.png">
+                    <p class="footer-text cell_1" style="line-height: 1em; text-align: center; color: #0D2481;">Focus Partly in Huge Info</p>
+                    <p class="project-text cell_1">
+                        There're bunches of information in one medical records, not to mention thousands of records. But only several related data is necessary for filtering and research.
+                    </p>
+                </div>
+                <div class="grid-3-space">
+                    <img class="cell_3" src="images/Synyi/Insight_1.png">
+                    <p class="footer-text cell_1" style="line-height: 1em; text-align: center; color: #0D2481;">Search Frequently Adopt Pricisely</p>
+                    <p class="project-text cell_1">
+                        Before launching the medical project, doctors will collect patients and records broadly and fuzzily. In formal research, doctor will filter out relatively unproper samples based on previous collection.
+                    </p>
+                </div>
+            </div>
+            
+
+    		<h2 class="title-text" style="text-align: center;" id="element-waypoint0">
+    			· Opportunities ·
+    		</h2>
+    		<p class="body-text project-text">
+    			So based on the insights, we brainstormed three design opportunities to respond them.
+    		</p><div class="grid-f">
+                <div class="grid-3-space">
+                    <img class="cell_3" src="images/Synyi/Opportunity1.png">
+                    <p class="footer-text cell_1" style="line-height: 1em; text-align: center; color: #0D2481;">Advanced. Advanced search</p>
+                    <p class="project-text cell_1">
+                        Besides the basic search — find all results with certain phases with NLP(natural language processing) tech, users need advanced search so that they can find medical records accurately or narrow down the results quickly and safely.
+                    </p>
+                </div>
+                <div class="grid-3-space">
+                    <img class="cell_3" src="images/Synyi/Opportunity2.png">
+                    <p class="footer-text cell_1" style="line-height: 1em; text-align: center; color: #0D2481;">2nd-Processing of Search Results</p>
+                    <p class="project-text cell_1">
+                        When designing the search results page, we need to arrange all information properly to help users find what they care quickly, and provide tools to manage the results.
+                    </p>
+                </div>
+                <div class="grid-3-space">
+                    <img class="cell_3" src="images/Synyi/Opportunity3.png">
+                    <p class="footer-text cell_1" style="line-height: 1em; text-align: center; color: #0D2481;">Subscribe. Search Automaticlly</p>
+                    <p class="project-text cell_1">
+                        To help users monitor the accreting medical records which meet the required conditions, we design the subcribe function which can refresh medical records according to the search conditions automaticlly.
+                    </p>
+                </div>
+            </div>
+            
+    		
+    		<h2 class="title-text" style="text-align: center;" id="element-waypoint0">
+    			· Advanced. Advanced search ·
+    		</h2>
+    		<div class="grid">
+    			<div class="grid-3_2">
+    				<p class="cell_3 project-text" style="text-align: left;">
+    					Based on users' background, we design the relationship between conditions with virtue of <mark>“set”.</mark>
+    					<br><br>
+    					After talking with our medical consultants, I have an initial idea of advanced search. Then, I came to medical consultants with the sketches, and got valuable feedbacks. Actually we discuss these sketches for sevaral times, and iterate the design Based on more than 5 times. In brief, I revise it in following aspects, thus, the interface can be more simple, and encourage users to focus on the main functions.
+    				</p>
+    			</div>
+    			<div class="grid-3">
+    				<p class="cell_3 quotation-text" style="text-align: left;">
+    					"Medical records have tremendous amounts of attributes in a long time. One patient could have sevaral medical records of various disease in various time."
+    				</p>
+    			</div>
+    		</div>
+
+            <div class="grid-f">
+                <div class="grid-1">
+                    <img class="cell_1" src="images/Synyi/Set.png">
+                </div>
+            </div>
+
+    		<div class="grid">
+    			<div class="grid-3_2">
+    				<img class="cell_1" src="images/Synyi/AllKindSearch.png">
+    			</div>
+    			<div class="grid-3">
+    				<p class="cell_1 all-tran">
+    					<span class="resume-text-1 project-text-l">EXPLORATION 1</span>
+    					<span class="project-text project-text-l">There're several kinds of box: including-input, including-choose, intaking-input, time-based, position-based.<br><br>It's complex if they need to choose box firstly, than input later. So I design the box as: use the including-input box as default box, than they input text in first slot, then, the whole box will change to the correspondent one.</span>
+    				</p>
+    			</div>
+    		</div>
+
+    		<div class="grid">
+    			<div class="grid-3">
+    				<p class="cell_1 all-tran">
+    					<span class="resume-text-1 project-text-l">EXPLORATION 2</span>
+    					<span class="project-text project-text-l">To reduce the complexity of multiple logical relations, I adopt auto-full input box so that users can fill the first box easily.<br><br>I wrap all detailed settings and put the drop down/wrap button next to the name of the condition sets. I also make the delete button show when mouse over, invisible when mouse out.</span>
+    				</p>
+    			</div>
+    			<div class="grid-3_2">
+    				<img class="cell_1_halft" src="images/Synyi/input_version.gif">
+    				<img class="cell_1_halfb" src="images/Synyi/input_advanced_search.gif">
+    			</div>
+    		</div>
+    		
+    		<div class="grid">
+    			<div class="grid-3_2">
+    				<img class="cell_1" src="images/Synyi/Search.png">
+    			</div>
+    			<div class="grid-3">
+    				<p class="cell_1 all-tran">
+    					<span class="resume-text-1 project-text-l">FINAL ADVANCED SEARCH</span>
+    					<span class="project-text project-text-l">There is two group at beginning: "Include", "Exclude", which is same form as the conditions in doctors' hand-writing reports.<br><br>For each group, they can choose different "Time-Factor" of the following conditions: "No Time Limits", "In One Time", "Certain Sequence".<br><br>Every sub-group means one incident. These incidents can be connected with "And"/"Or". As sub-group, there's default input boxs, the first box inputted will decide the final type of the input boxs. Also, all more manipulations are wrapped inside the button next to the name of sub-group.</span>
+    				</p>
+    			</div>
+    		</div>
+
+    		<h2 class="title-text" style="text-align: center;" id="element-waypoint0">
+    			· 2nd-Processing of Search Results ·
+    		</h2>
+    		<p class="body-text project-text">
+    			The search results showed in three levels: patient’s basic info (age, gender, main disease) and related medical records; related infomation in records; assistant hospital and time information. And all texts, buttons are deployed in specific position with designed grid. Thus, it can help users find accurate and matching info quickly.
+    		</p>
+    		<div class="grid">
+    			<div class="grid-1">
+    				<img class="cell_1" src="images/Synyi/Result_1.png">
+				</div>
+			</div>	
+			<p class="body-text project-text">
+    			On the right hand of the page, I put the data analysis diagrams, which indicate and divide the search results in sevaral aspects, so users can master the basic medical records distribution and filter it.
+    		</p>
+    		<div class="grid">
+    			<div class="grid-1">
+    				<img class="cell_1" src="images/Synyi/Result_2.png">
+				</div>
+			</div>
+			<p class="body-text project-text">
+    			On the top of the page, it shows the search condition, subscribe/collect/enroll/export button, and related search words. Below is the final version after sevaral rectification.
+    		</p>
+    		<div class="grid">
+    			<div class="grid-1">
+    				<img class="cell_1" src="images/Synyi/Result_3.png">
+				</div>
+			</div>	
+    		
+
+    		<h2 class="title-text" style="text-align: center;" id="element-waypoint1">
+    			· Subscribe. Search Automaticlly ·
+    		</h2>
+    		<p class="body-text project-text">
+    			During the design process, the impressivest thing is deciding refresh frequency. At beginning, I decide it as sevaral choosable fixed frequency, like per week, per month, every 3 months. It’s not a perfect way. Because most doctors’ll even check the expected results everyday in the preliminary satge so that to make sure having enough high-quality records for clinical research. But due to the system load, refresh frequency can’t be per day. 
+    			<br><br>
+    			At this time, I discuss this tricky task with back-end programmers. And they tell me how data(medical records) flows from the terminals in hospital to the database to the data pool for searching.
+    		</p>
+    		<div class="grid">
+    			<div class="grid-1">
+    				<img class="cell_1" src="images/Synyi/data_flow.png">
+				</div>
+			</div>
+			<p class="body-text project-text">
+				Inspired by data flow, I set the refresh frequency as real-time, per week, per month.<br><br>Real-time means, when a new medical record comes from terminals in hospital(doctors or nurses input it) to database, the background program will judge if the record meet the subscribe conditions, if it’s true, this medical record will be added into corresponding subcribe fold. So, the users can get medical records as soon as possible and the load of background computers can be reduced compared with search the conditions many times per day.
+			</p>
+			<div class="grid">
+				<div class="grid-3_2" style="left: 50%; transform: translateX(-50%); -ms-transform: translateX(-50%); -moz-transform: translateX(-50%); -webkit-transform: translateX(-50%); ">
+					<img class="cell_1" src="images/Synyi/Subscribe.png">
+				</div>
+			</div>
+
+    		<h2 class="title-text" style="text-align: center;" id="element-waypoint2">
+    			· More intelligent. Better fault-tolerant ·
+    		</h2>
+    		<p class="body-text project-text">
+    			NLP is one of the key technology of Synyi and this product.
+    			<br>
+    			I use nlp  in basic search — to understand the search terms, advanced search — to imply and auto-fill search conditions, search results — to show nout only the results containing search conditions, but also those are sysnonyms of search conditions.
+    		</p>
+
+    		<h2 class="title-text" style="text-align: center;">
+    			· Reflection and Evaluation ·
+    		</h2>
+    		<p class="body-text project-text">
+    			It's a invaluable experience to cooprate with different roles: professional consultants, product manager, programmers, marketing, doctors, etc. Although working for only 3 month, I am "educated" to be a more delibrate designer.
+    		</p>
+
+            <h2 class="title-text" style="text-align: center;">
+                · More Frames ·
+            </h2>
+            <div class="grid-f">
+                <div class="grid-1">
+                    <img class="cell_1" src="images/Synyi/MorePages.png">
+                </div>
+            </div>
+    		
+    	</div>
+    </div>
+    </main>
+
+    <footer class="footer">
+    	<div class="grid-f">
+    		<div class="grid-2 work-list" style="background-color: #FFAFA2;">
+    			<a href="Foxus_0.html">
+    				<img class="cell_2 link-pic" src="images/Foxus/Footer.png">
+    				<span class="link-hint footer-field-text">—— previous ——</span>
+    				<span class="link-name footer-text">FOXUS</span>
+    				<span class="link-field footer-field-text">corss-platform online education design</span>
+    			</a>
+    		</div>
+    		<div class="grid-2 work-list" style="background-color: #48A150;">
+    			<a href="Hopsicle.html">
+    				<img class="cell_2 link-pic" src="images/Hopsicle/Footer.png" src="">
+    			    <span class="link-hint footer-field-text">—— next ——</span>
+    				<span class="link-name footer-text">HOPSICLE</span>
+    				<span class="link-field footer-field-text">service design</span>
+    			</a>
+    		</div>
+    	</div>
+    </footer>
+    <p class="body-text project-text">FIND  ME  BY  sxczqxty1994@163.com</p>
+
+
+	<script src="js/canvas-video-player.js"></script>
+	<script>
+		var canvasVideo = new CanvasVideoPlayer({
+			videoSelector: '.js-video',
+			videobtnSelector: '.js-videobtn',
+			videottlSelector: '.js-videottl',
+			canvasSelector: '.js-canvas',
+			timelineSelector: '.js-timeline',
+			audio: false
+		});
+	</script>
+</body>
+</html>
